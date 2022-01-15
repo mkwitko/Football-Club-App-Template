@@ -1,0 +1,7 @@
+{
+  "name": "clube-template",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
