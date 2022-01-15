@@ -24,3 +24,55 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  --background: #eaf0eb;
+}
+
+@font-face {
+  font-family: 'Din-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/D-DIN-PRO-400-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Din-Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./assets/fonts/D-DIN-PRO-700-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Din-Thin';
+  font-style: normal;
+  font-weight: thin;
+  src: url('./assets/fonts/DIN-Light.otf');
+}
+
+:root,
+:root[mode=ios],
+:root[mode=md] {
+  --ion-font-family: 'Din-Regular';
+  font-family: 'Din-Regular'
+}
+
+p {
+  margin: 0;
+}
+
+.menu-button {
+  font-size: 5vh;
+  z-index: 100;
+}
+
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 3vh;
+  font-family: 'Din-Bold';
+}

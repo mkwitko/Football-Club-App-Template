@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Autenticação
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="swiper-no-swiping">
+  <ion-slides mode="ios">
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <p class="ion-text-center">
+          <img class="logo" src="../../../assets/img/logo.png" alt="">
+        </p>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="userLogin.user"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+        <ion-button (click)="login()" class="ion-margin-top" color="primary" expand="block">
+          <ion-label color="light">ENTRAR</ion-label>
+        </ion-button>
+        <ion-button (click)="goTo('next')" class="cadastrar" color="light" expand="block">
+          <ion-label color="primary">CADASTRAR</ion-label>
+        </ion-button>
+        <ion-button (click)="loginGuest()" class="ion-margin-top" fill="clear" expand="block">
+          <ion-label color="primary">Entrar como convidado</ion-label>
+        </ion-button>
+        <ion-button class="esqueci" size="small" (click)="change('esqueci-senha')" fill="clear">
+          <ion-label>ESQUECI A MINHA SENHA</ion-label>
+        </ion-button>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-inner">
+        <p class="ion-text-center">
+          <img class="logo" src="../../../assets/img/logo.png" alt="">
+        </p>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="userRegister.nome"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="userRegister.user"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password"[(ngModel)]="userRegister.password"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">Confirme sua Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="confirmacaoSenha"></ion-input>
+        </ion-item>
+        <div class="ion-margin-top">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="2">
+                <ion-checkbox (ionChange)="changeTermos($event)" mode="md"></ion-checkbox>
+              </ion-col>
+              <ion-col size="10">
+                <p class="inline li">Li e concordo com o</p>
+                <p button (click)="change('/licenca-uso')" class="inline termo-texto" color="primary"> Termos de Licença de uso</p>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-margin-top">
+              <ion-col size="2">
+                <ion-checkbox (ionChange)="changePrivacidade($event)" mode="md"></ion-checkbox>
+              </ion-col>
+              <ion-col size="10">
+                <p class="inline li">Li e concordo com a</p>
+                <p button (click)="change('/privacidade')" class="inline termo-texto" color="primary"> Politica de Privacidade de Dados</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <ion-button (click)="register()" class="ion-margin" color="primary" expand="block">
+          <ion-label color="light">CADASTRAR</ion-label>
+        </ion-button>
+        <ion-button (click)="goTo('prev')" class="cadastrar ion-margin-start ion-margin-end" color="light" expand="block">
+          <ion-label color="primary">JÁ SOU CADASTRADO</ion-label>
+        </ion-button>
+      </div>
+    </ion-slide>
+
+
+  </ion-slides>
+</ion-content>

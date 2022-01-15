@@ -1,3 +1,28 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="menu-content" when="xl">
+    <ion-menu swipeGesture="false" class="side-menu-gradient" contentId="menu-content" side="start" type="overlay">
+      <ion-content>
+        <ion-menu-toggle>
+          <ion-list class="menu-items" lines="none">
+            <ng-container *ngFor="let a of itens">
+              <ion-item [disabled]="a.disabled" (click)="goTo(a.url)" lines="none" detail="false" routerLinkActive="active">
+                <ion-icon slot="start" name={{a.icone}}></ion-icon>
+                <ion-label>{{a.nome}}</ion-label>
+              </ion-item>
+            </ng-container>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-content>
+
+      <ion-footer>
+        <ion-toolbar>
+          <ion-button (click)="logout()" expand="block" fill="clear" shape="round">
+            <ion-label color="danger">LOGOUT</ion-label>
+          </ion-button>
+        </ion-toolbar>
+      </ion-footer>
+
+    </ion-menu>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
